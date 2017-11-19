@@ -16,5 +16,10 @@ namespace GameLibraryOrganizer
         {
             InitializeComponent();
         }
+
+        private void titleBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
