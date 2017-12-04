@@ -33,5 +33,16 @@ namespace GameLibraryOrganizer.Properties {
                 return ((string)(this["dataConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\games.mdf;Int" +
+            "egrated Security=True")]
+        public string gamesConnectionString {
+            get {
+                return ((string)(this["gamesConnectionString"]));
+            }
+        }
     }
 }
