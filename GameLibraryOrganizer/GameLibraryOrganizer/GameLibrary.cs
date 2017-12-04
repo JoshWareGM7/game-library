@@ -21,7 +21,22 @@ namespace GameLibraryOrganizer
             InitializeComponent();
         }
 
-        public void DisplayData()
+        private void ClearFields()
+        {
+            TitleBox.Text = "";
+            YearBox.Text = "";
+            ESRBBox.Text = "";
+            DevBox.Text = "";
+            GenreBox.Text = "";
+            DescBox.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+        }
+
+        private void DisplayData()
         {
             con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -77,6 +92,7 @@ namespace GameLibraryOrganizer
             cmd.ExecuteNonQuery();
             con.Close();
             DisplayData();
+            ClearFields();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -88,21 +104,12 @@ namespace GameLibraryOrganizer
             cmd.ExecuteNonQuery();
             con.Close();
             DisplayData();
+            ClearFields();
         }
 
         private void ClearButton_Click_1(object sender, EventArgs e)
         {
-            TitleBox.Text = "";
-            YearBox.Text = "";
-            ESRBBox.Text = "";
-            DevBox.Text = "";
-            GenreBox.Text = "";
-            DescBox.Text = "";
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
-            radioButton5.Checked = false;
+            ClearFields();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
@@ -137,6 +144,7 @@ namespace GameLibraryOrganizer
             cmd.ExecuteNonQuery();
             con.Close();
             DisplayData();
+            ClearFields();
         }
     }
 }
